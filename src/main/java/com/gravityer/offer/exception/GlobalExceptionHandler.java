@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
 
         ErrorMessage error = new ErrorMessage(1, ex.getMessage());
         ErrorResponse response = new ErrorResponse("OfferService", tracer.currentSpan().toString(), error);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
 
     }
 }
